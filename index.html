@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Virgillio Jeshua | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --bg: #0f172a;
+      --bg-soft: #111827;
+      --card: #020617;
+      --accent: #38bdf8;
+      --accent-soft: rgba(56,189,248,0.12);
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --border: #1f2937;
+      --chip-bg: #020617;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #1f2937 0, #020617 40%, #000 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .wrapper {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 24px 16px 64px;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(10px);
+      background: linear-gradient(to bottom, rgba(15,23,42,0.95), rgba(15,23,42,0.7), transparent);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .nav-logo {
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      border: 1px solid var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 16px;
+      background: radial-gradient(circle at top, #0ea5e9 0, #0f172a 45%, #020617 100%);
+      color: #e5faff;
+      box-shadow: 0 0 24px rgba(56,189,248,0.45);
+    }
+
+    .nav-name {
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .nav-role {
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 16px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .nav-links a {
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      transition: 0.18s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+      border-color: var(--border);
+      background: rgba(15,23,42,0.8);
+    }
+
+    .nav-cta {
+      font-size: 13px;
+      padding: 7px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--accent);
+      background: linear-gradient(to right, rgba(56,189,248,0.18), rgba(56,189,248,0.02));
+      box-shadow: 0 0 18px rgba(56,189,248,0.35);
+      cursor: pointer;
+      transition: 0.18s ease;
+      white-space: nowrap;
+    }
+
+    .nav-cta:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 0 26px rgba(56,189,248,0.55);
+    }
+
+    /* Hero */
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.2fr);
+      gap: 32px;
+      padding-top: 32px;
+      padding-bottom: 32px;
+    }
+
+    .tagline {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.5);
+      background: rgba(15,23,42,0.85);
+      font-size: 11px;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    .tag-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 10px rgba(34,197,94,0.9);
+    }
+
+    .hero h1 {
+      font-size: clamp(26px, 4vw, 32px);
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      margin-bottom: 8px;
+    }
+
+    .hero-highlight {
+      background: linear-gradient(to right, #e5e7eb, #38bdf8);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: 14px;
+      color: var(--muted);
+      max-width: 560px;
+      margin-bottom: 18px;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+
+    .hero-badge {
+      font-size: 11px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: #e0f2fe;
+      border: 1px solid rgba(56,189,248,0.4);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .btn-primary, .btn-ghost {
+      font-size: 13px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: 0.18s ease;
+    }
+
+    .btn-primary {
+      border-color: var(--accent);
+      background: linear-gradient(to right, #0ea5e9, #22d3ee);
+      color: #0f172a;
+      font-weight: 500;
+      box-shadow: 0 0 25px rgba(56,189,248,0.6);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 0 36px rgba(56,189,248,0.9);
+    }
+
+    .btn-ghost {
+      border-color: var(--border);
+      background: rgba(15,23,42,0.9);
+      color: var(--text);
+    }
+
+    .btn-ghost:hover {
+      background: rgba(15,23,42,1);
+      transform: translateY(-1px);
+    }
+
+    .hero-contact-line {
+      font-size: 12px;
+      color: var(--muted);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .hero-contact-line span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .hero-contact-line code {
+      font-size: 11px;
+      padding: 2px 6px;
+      border-radius: 6px;
+      background: rgba(15,23,42,0.9);
+      border: 1px solid var(--border);
+      color: var(--muted);
+    }
+
+    /* Hero right */
+    .hero-right {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-card {
+      width: 100%;
+      max-width: 340px;
+      border-radius: 20px;
+      background: radial-gradient(circle at top, rgba(56,189,248,0.25), transparent 55%),
+                  linear-gradient(to bottom right, rgba(15,23,42,0.96), rgba(15,23,42,0.98));
+      border: 1px solid rgba(148,163,184,0.35);
+      padding: 18px 16px;
+      box-shadow: 0 20px 60px rgba(15,23,42,0.9);
+    }
+
+    .hero-card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 14px;
+    }
+
+    .hero-avatar {
+      width: 54px;
+      height: 54px;
+      border-radius: 20px;
+      background: radial-gradient(circle at top, #22c55e 0, #0f172a 40%, #000 100%);
+      border: 1px solid rgba(148,163,184,0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      font-weight: 700;
+      color: #e5faff;
+      box-shadow: 0 0 30px rgba(34,197,94,0.7);
+    }
+
+    .hero-meta {
+      font-size: 11px;
+      text-align: right;
+      color: var(--muted);
+    }
+
+    .hero-meta strong {
+      display: block;
+      font-size: 13px;
+      color: var(--text);
+    }
+
+    .hero-pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 10px;
+    }
+
+    .hero-pill {
+      font-size: 10px;
+      padding: 3px 7px;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.5);
+      background: rgba(15,23,42,0.9);
+      color: var(--muted);
+    }
+
+    .hero-code {
+      margin-top: 8px;
+      padding: 10px;
+      border-radius: 14px;
+      background: #020617;
+      border: 1px solid #0b1120;
+      font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: 11px;
+      color: var(--muted);
+      overflow-x: auto;
+    }
+
+    .hero-code-line {
+      display: block;
+      white-space: pre;
+    }
+
+    .hero-code-line span.accent {
+      color: #38bdf8;
+    }
+
+    .hero-code-line span.key {
+      color: #a5b4fc;
+    }
+
+    .hero-code-line span.str {
+      color: #fde68a;
+    }
+
+    /* Sections */
+    section {
+      margin-top: 18px;
+      padding: 20px 18px;
+      border-radius: 18px;
+      background: linear-gradient(to bottom right, rgba(15,23,42,0.96), rgba(15,23,42,0.98));
+      border: 1px solid rgba(31,41,55,0.95);
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: baseline;
+      margin-bottom: 14px;
+    }
+
+    .section-title {
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .section-sub {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 4px;
+    }
+
+    .chip {
+      font-size: 11px;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: #020617;
+      border: 1px solid var(--border);
+      color: var(--muted);
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.4fr);
+      gap: 16px;
+    }
+
+    .card {
+      border-radius: 14px;
+      background: #020617;
+      border: 1px solid #0b1120;
+      padding: 12px 12px 14px;
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+
+    .card-title {
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .card-subtitle {
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .card-meta {
+      font-size: 11px;
+      color: var(--muted);
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    .card-body {
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+
+    .card-body ul {
+      padding-left: 18px;
+      margin: 4px 0;
+    }
+
+    .card-body li {
+      margin-bottom: 2px;
+    }
+
+    .card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 4px;
+    }
+
+    .tag {
+      font-size: 10px;
+      padding: 3px 7px;
+      border-radius: 999px;
+      background: rgba(15,23,42,0.9);
+      border: 1px solid var(--border);
+      color: var(--muted);
+    }
+
+    /* Achievements */
+    .achievements-wrapper {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.4fr);
+      gap: 16px;
+    }
+
+    .ach-list {
+      font-size: 12px;
+      color: var(--muted);
+      max-height: 260px;
+      overflow-y: auto;
+      padding-right: 6px;
+    }
+
+    .ach-list ul {
+      list-style: none;
+    }
+
+    .ach-list li {
+      margin-bottom: 6px;
+    }
+
+    .ach-label {
+      font-weight: 500;
+      color: var(--text);
+    }
+
+    .skills-columns {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+      gap: 10px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .skills-columns ul {
+      padding-left: 18px;
+    }
+
+    /* Contact */
+    .contact-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .contact-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .contact-item span.icon {
+      font-size: 14px;
+    }
+
+    footer {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 16px;
+      font-size: 11px;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .hero-contact-line span strong {
+      font-weight: 600;
+    }
+
+    .section-header + .chips {
+      margin-bottom: 10px;
+    }
+
+    .wrapper main, .wrapper {
+      max-width: 1120px;
+    }
+
+    @media (max-width: 880px) {
+      .hero {
+        grid-template-columns: minmax(0,1fr);
+      }
+      .hero-right {
+        order: -1;
+      }
+      .hero-card {
+        max-width: none;
+      }
+      .grid-2, .achievements-wrapper {
+        grid-template-columns: minmax(0,1fr);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .nav {
+        flex-wrap: wrap;
+      }
+      .nav-links {
+        display: none;
+      }
+      section {
+        padding: 16px 12px;
+      }
+      .card {
+        padding: 11px 10px 13px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <div class="nav-left">
+        <div class="nav-logo">VJ</div>
+        <div>
+          <div class="nav-name">Virgillio Jeshua Judhistira</div>
+          <div class="nav-role">Information Systems Student</div>
+        </div>
+      </div>
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a href="#contact" class="nav-cta">Contact me</a>
+    </div>
+  </header>
+
+  <main class="wrapper">
+    <!-- Hero -->
+    <section class="hero" id="about">
+      <div>
+        <div class="tagline">
+          <span class="tag-dot"></span>
+          Open to internships in tech, UI/UX, and web development
+        </div>
+        <h1>
+          Hi, I’m <span class="hero-highlight">Virgillio Jeshua</span><br />
+          Information Systems Student & Junior Web Developer
+        </h1>
+        <p class="hero-subtitle">
+          I am a fifth-semester student at Atma Jaya Catholic University with a strong interest in technology and information systems.
+          I focus on understanding how applications work, UI/UX design, and how digital solutions can solve real-world problems.
+          I enjoy learning through <em>learning by doing</em> by joining seminars, campus activities, and organizations that strengthen
+          my analytical thinking, communication, and teamwork skills.
+        </p>
+
+        <div class="hero-badges">
+          <span class="hero-badge">UI/UX Design</span>
+          <span class="hero-badge">Web Development (HTML, CSS, JS)</span>
+          <span class="hero-badge">Mobile App (Android Studio)</span>
+          <span class="hero-badge">Decision Support System (SAW)</span>
+        </div>
+
+        <div class="hero-actions">
+          <a href="#projects" class="btn-primary">View Projects</a>
+          <a href="#achievements" class="btn-ghost">See Achievements</a>
+        </div>
+
+        <div class="hero-contact-line">
+          <span><strong>📍</strong> Tangerang / Bekasi, Indonesia</span>
+          <span>5th-semester Information Systems student</span>
+          <span>
+            <code>☎ +62 813-1680-8867</code>
+            <code>✉ virgillio08@gmail.com</code>
+          </span>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <div class="hero-card">
+          <div class="hero-card-top">
+            <div class="hero-avatar">VJ</div>
+            <div class="hero-meta">
+              <strong>Profile Snapshot</strong>
+              Atma Jaya Catholic University<br />
+              GPA 3.44 / 4.00
+            </div>
+          </div>
+          <div class="hero-pill-row">
+            <span class="hero-pill">Information Systems</span>
+            <span class="hero-pill">Web & Mobile Dev</span>
+            <span class="hero-pill">UI/UX & Creative Design</span>
+            <span class="hero-pill">Taekwondo Athlete</span>
+            <span class="hero-pill">Basketball Player</span>
+          </div>
+          <div class="hero-code" aria-label="short technical bio">
+            <span class="hero-code-line"><span class="accent">const</span> <span class="key">virgillio</span> <span class="accent">=</span> {</span>
+            <span class="hero-code-line">  role: <span class="str">"Information Systems Student"</span>,</span>
+            <span class="hero-code-line">  focus: [<span class="str">"UI/UX Design"</span>, <span class="str">"Web Development"</span>, <span class="str">"Product & Creative Design"</span>],</span>
+            <span class="hero-code-line">  stack: [<span class="str">"HTML"</span>, <span class="str">"CSS"</span>, <span class="str">"JavaScript (Basic)"</span>, <span class="str">"Python"</span>, <span class="str">"Android Studio"</span>],</span>
+            <span class="hero-code-line">  interests: [<span class="str">"Campus Activities"</span>, <span class="str">"Sports"</span>, <span class="str">"Stage & Presentation"</span>]</span>
+            <span class="hero-code-line">};</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education">
+      <div class="section-header">
+        <div>
+          <div class="section-title">Education</div>
+          <div class="section-sub">Formal education and academic background</div>
+        </div>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <div class="card-title">Atma Jaya Catholic University of Indonesia</div>
+              <div class="card-subtitle">Bachelor’s Degree in Information Systems</div>
+            </div>
+            <div class="card-meta">
+              Aug 2023 – 2027<br />
+              GPA: 3.44 / 4.00
+            </div>
+          </div>
+          <div class="card-body">
+            Based in Tangerang, Indonesia. Actively involved in academic projects, student activities, and competitions related
+            to technology, product innovation, and creative design.
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <div class="card-title">SMA Marsudirini Bogor</div>
+              <div class="card-subtitle">Natural Science Major</div>
+            </div>
+            <div class="card-meta">
+              Jul 2020 – Jun 2023
+            </div>
+          </div>
+          <div class="card-body">
+            Built a strong foundation in analytical thinking and problem-solving, which supports my interest in information systems,
+            technology, and data-driven decision-making.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects / Student Experience -->
+    <section id="projects">
+      <div class="section-header">
+        <div>
+          <div class="section-title">Projects & Student Experience</div>
+          <div class="section-sub">Selected academic projects and hands-on learning</div>
+        </div>
+        <div class="chips">
+          <span class="chip">Decision Support System</span>
+          <span class="chip">UI/UX Design</span>
+          <span class="chip">Web & Mobile Development</span>
+          <span class="chip">Game Development</span>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <div class="card-title">Student Organization Election Web System</div>
+              <div class="card-subtitle">Decision Support System · Atma Jaya Catholic University</div>
+            </div>
+          </div>
+          <div class="card-body">
+            <ul>
+              <li>Designed UI/UX flows and interfaces in Figma.</li>
+              <li>Developed a web-based decision support system using Python.</li>
+              <li>Automated candidate evaluation using Simple Additive Weighting (SAW) based on organizational experience.</li>
+            </ul>
+            <div class="card-tags">
+              <span class="tag">VS Code</span>
+              <span class="tag">Python</span>
+              <span class="tag">Flask / Django</span>
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">Figma</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <div class="card-title">Memome – Mobile Note-Taking App</div>
+              <div class="card-subtitle">Mobile Application · Atma Jaya Catholic University</div>
+            </div>
+          </div>
+          <div class="card-body">
+            <ul>
+              <li>Designed app prototypes and user flows using Figma.</li>
+              <li>Developed a note-taking mobile application in Android Studio.</li>
+              <li>Implemented core features: create, edit, and organize notes.</li>
+            </ul>
+            <div class="card-tags">
+              <span class="tag">Figma</span>
+              <span class="tag">Android Studio</span>
+              <span class="tag">XML Layout</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-2" style="margin-top:12px;">
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <div class="card-title">Game Development using Unity Hub</div>
+              <div class="card-subtitle">Game & Flow Design · Atma Jaya Catholic University</div>
+            </div>
+          </div>
+          <div class="card-body">
+            <ul>
+              <li>Designed game flow, basic mechanics, and user interface.</li>
+              <li>Implemented game logic, collisions, and character controls.</li>
+            </ul>
+            <div class="card-tags">
+              <span class="tag">Unity Hub</span>
+              <span class="tag">C# (Basic)</span>
+              <span class="tag">VS Code</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <div class="card-title">Atma Jaya Student Award – Poster Design</div>
+              <div class="card-subtitle">Product Innovation Poster · Atma Jaya Catholic University</div>
+            </div>
+          </div>
+          <div class="card-body">
+            <ul>
+              <li>Designed a competition poster for a product innovation event using Canva.</li>
+              <li>Achieved 2nd Place in the Atma Jaya Student Award poster category.</li>
+            </ul>
+            <div class="card-tags">
+              <span class="tag">Canva</span>
+              <span class="tag">Visual Design</span>
+              <span class="tag">Presentation</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Professional & Organizational Experience -->
+    <section id="experience">
+      <div class="section-header">
+        <div>
+          <div class="section-title">Experience</div>
+          <div class="section-sub">Professional and organizational roles</div>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <div class="card-title">Survey & Data Input Assistant</div>
+              <div class="card-subtitle">Atma Jaya Catholic University</div>
+            </div>
+            <div class="card-meta">
+              Jul 2025 – Aug 2025
+            </div>
+          </div>
+          <div class="card-body">
+            <ul>
+              <li>Entered alumni data from internal campus documents into Google Forms for survey purposes.</li>
+              <li>Worked independently while following instructions and meeting assigned targets.</li>
+              <li>Organized and categorized files in Google Drive to support reporting.</li>
+            </ul>
+            <div class="card-tags">
+              <span class="tag">Google Forms</span>
+              <span class="tag">Google Drive</span>
+              <span class="tag">Google Sheets</span>
+              <span class="tag">Excel</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <div class="card-title">UKM Taekwondo UAJ</div>
+              <div class="card-subtitle">Equipment Division Staff · Atma Jaya Catholic University</div>
+            </div>
+            <div class="card-meta">
+              Oct 2024 – Nov 2025
+            </div>
+          </div>
+          <div class="card-body">
+            <ul>
+              <li>Prepared and organized training equipment before each session and ensured all equipment was returned after use.</li>
+              <li>Coordinated equipment logistics for internal events and external competitions.</li>
+            </ul>
+            <div class="card-tags">
+              <span class="tag">Equipment Management</span>
+              <span class="tag">Teamwork</span>
+              <span class="tag">Discipline</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-2" style="margin-top:12px;">
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <div class="card-title">UKM Basketball UAJ</div>
+              <div class="card-subtitle">Coordinator of Transport, Accommodation, Equipment & Security</div>
+            </div>
+            <div class="card-meta">
+              Mar 2024 – Jul 2025
+            </div>
+          </div>
+          <div class="card-body">
+            <ul>
+              <li>Coordinated transportation by contacting and negotiating with bus and military truck service providers for events.</li>
+              <li>Managed accommodation by contacting villa owners and negotiating booking terms for team events and activities.</li>
+            </ul>
+            <div class="card-tags">
+              <span class="tag">Logistics</span>
+              <span class="tag">Coordination</span>
+              <span class="tag">Event Management</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Achievements, Interests, Skills -->
+    <section id="achievements">
+      <div class="section-header">
+        <div>
+          <div class="section-title">Achievements, Interests & Skills</div>
+          <div class="section-sub">Highlights from competitions and skill development</div>
+        </div>
+      </div>
+
+      <div class="achievements-wrapper">
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <div class="card-title">Achievements</div>
+              <div class="card-subtitle">Sports, design, and competitions</div>
+            </div>
+          </div>
+          <div class="ach-list">
+            <ul>
+              <li><span class="ach-label">2nd Place</span>, 2025 Taekwondo Changmookwan Singapore Online Poomsae & Speed Kicking International Championship</li>
+              <li><span class="ach-label">1st Place</span>, 2024 Taekwondo Liga DKI Jakarta Season 8 Kyorugi Championship</li>
+              <li><span class="ach-label">1st Place</span>, 2025 Taekwondo Liga DKI Jakarta Season 10 Kyorugi Championship</li>
+              <li><span class="ach-label">1st Place</span>, 2025 Taekwondo Kajati Banten Cup Kyorugi Championship</li>
+              <li><span class="ach-label">2nd Place</span>, 2024 Taekwondo KONI Cup Series-5 Kyorugi Championship</li>
+              <li><span class="ach-label">2nd Place</span>, 2024 Taekwondo ATF Universitas Indonesia Kyorugi Championship</li>
+              <li><span class="ach-label">2nd Place</span>, 2023 Taekwondo KAPOLRI Cup Season 4 Kyorugi Championship</li>
+              <li><span class="ach-label">1st Place</span>, 2023 Basketball FT Week</li>
+              <li><span class="ach-label">1st Place</span>, 2024 Basketball FT Week</li>
+              <li><span class="ach-label">1st Place</span>, 2025 Basketball Vista Cup</li>
+              <li><span class="ach-label">1st Place</span>, 2025 Basketball 3x3 PERSOL Cup</li>
+              <li><span class="ach-label">2nd Place</span>, 2025 Basketball ABASCHAMP</li>
+              <li><span class="ach-label">3rd Place</span>, 2025 Basketball MAFIA Games</li>
+              <li><span class="ach-label">2nd Place</span>, 2025 Poster Design – Atma Jaya Student Award</li>
+              <li><span class="ach-label">Finalist</span>, Business Plan Competition – AJIB 6th ABIEX</li>
+              <li><span class="ach-label">Finalist</span>, Product Innovation – AJIB 6th ABIEX</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <div class="card-title">Interests & Skills</div>
+              <div class="card-subtitle">What I like to explore and what I can do</div>
+            </div>
+          </div>
+          <div class="card-body">
+            <strong>Interests</strong>
+            <ul>
+              <li>Interested in technology, UI/UX design, product and creative design, and exploring new digital tools.</li>
+              <li>Enjoy participating in campus activities, organizing events, and collaborating with diverse teams.</li>
+              <li>Passionate about sports and performance-related activities that build confidence and communication skills.</li>
+            </ul>
+          </div>
+          <div class="skills-columns">
+            <div>
+              <strong>Technical Skills</strong>
+              <ul>
+                <li>Figma (Wireframing, UI Design, Prototyping)</li>
+                <li>Canva (Poster & Visual Design)</li>
+                <li>Microsoft Office (Word, Excel, PowerPoint)</li>
+                <li>User Flow & Diagramming (Flowchart, BPMN)</li>
+                <li>Web Development: HTML, CSS, JavaScript (Basic)</li>
+              </ul>
+            </div>
+            <div>
+              <strong>Language Skills</strong>
+              <ul>
+                <li>Indonesian (Native)</li>
+                <li>English (Basic, improving through projects and presentations)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <div class="section-header">
+        <div>
+          <div class="section-title">Contact</div>
+          <div class="section-sub">Let’s connect for collaboration, internships, or projects</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+          <p style="margin-bottom:10px;">
+            I’m open to internship opportunities, collaboration on digital projects, and discussions about UI/UX, web development,
+            and product innovation. Feel free to reach out through any of the channels below:
+          </p>
+          <div class="contact-row">
+            <div class="contact-item">
+              <span class="icon">☎</span>
+              <span>+62 813-1680-8867</span>
+            </div>
+            <div class="contact-item">
+              <span class="icon">✉</span>
+              <a href="mailto:virgillio08@gmail.com">virgillio08@gmail.com</a>
+            </div>
+            <div class="contact-item">
+              <span class="icon">in</span>
+              <a href="https://www.linkedin.com/in/virgilliojeshua" target="_blank" rel="noreferrer">
+                linkedin.com/in/virgilliojeshua
+              </a>
+            </div>
+          </div>
+          <p style="margin-top:10px;font-size:11px;color:var(--muted);">
+            Address: Jl. Batam Blok B.11, No.173, Jati Asih Indah PPA RT.4/RW.6, Jatirasa, Jatiasih 17424, Bekasi, Indonesia
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 Virgillio Jeshua. Built with HTML & CSS and deployed on GitHub Pages.
+  </footer>
+</body>
+</html>
